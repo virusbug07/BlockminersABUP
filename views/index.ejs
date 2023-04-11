@@ -1,0 +1,91 @@
+<%- include('./layouts/header') %>
+import * as OneSignal from '@onesignal/node-onesignal';
+<h1 class="title">Authorization Based On User Profile</h1>
+<div class="tutorial-info">
+  <ol class="tutorial-info">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <% if (user) { %>
+    <% if (user.role === 'MODERATOR') { %>
+  <div class="grid-container">
+    <div class="grid-item">
+        <button type="button" class="button" onclick="alert('Login First!')">App 1</button>
+        </a>
+    </div>
+    
+    <div class=" grid-item">
+          <button type="button" class="button" onclick="alert('Login First!')">App 3</button>
+        </a>
+    </div>
+  
+    <div class=" grid-item">
+      <button type="button" class="button" onclick="alert('Login First!')">App 5</button>
+    </a>
+</div>
+  <% } %>
+    <% } else { %>
+      
+<div class=" grid-item">
+  <button type="button" class="button" onclick="alert('Login First!')">App 4</button>
+</a>
+</div>
+  
+<div class=" grid-item">
+  <button type="button" class="button" onclick="alert('Login First!')">App 5</button>
+</a>
+</div>
+<div class=" grid-item">
+  <button type="button" class="button" onclick="alert('Login First!')">App 6</button>
+</a>
+</div>
+  
+<div class=" grid-item">
+  <button type="button" class="button" onclick="alert('Login First!')">App 7</button>
+</a>
+</div>
+  
+<div class=" grid-item">
+  <button type="button" class="button" onclick="alert('Login First!')">App 8</button>
+</a>
+</div>
+  
+<div class=" grid-item">
+  <button type="button" class="button" onclick="alert('Login First!')">App 9</button>
+</a>
+</div>
+<% } %>   
+<h1>App Request Access</h1>
+<div class="mb-3 row">
+  <label for="staticEmail" class="col-sm-2 col-form-label"><h3>Email </h3></label>
+  <div class="col-sm-10">
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+  </div>
+</div>
+<div class="mb-3 row">
+  <label for="inputPassword" class="col-sm-2 col-form-label"><h3>Which app to access</h3></label>
+  <div class="col-sm-10">
+    <input type="string" class="form-control" id="inputPassword">
+  </div>
+</div>
+<button type="button" class="button" onclick="alert('Requested to the admin!')">Request Access</button>
+<% if (user) { %>
+  <% if (user.role === 'ADMIN') { %>
+<button type="button" class="button" onclick="alert('Request Approved!')">Approve Request</button>
+<% } %>
+<% } else { %>
+  <input type="reset" value="Reset">
+  <% } %>  
+
+</body>
+</html>
+  </ol>
+</div>
+
+<%- include('./layouts/footer') %>
